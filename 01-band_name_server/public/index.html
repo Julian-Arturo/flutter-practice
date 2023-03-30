@@ -20,9 +20,14 @@
         });
 
         socket.emit("mensaje", {nombre : "Julian"});
-        socket.on("mensaje", function(payload){
+        socket.on("nuevo-mensaje", function(payload){
             console.log("Escudando ", payload)
+        });
+
+        socket.on("active-bands", function(bandas){
+            console.table( bandas )
         })
+
     </script>
 </body>
 </html>
